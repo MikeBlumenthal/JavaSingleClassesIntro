@@ -18,7 +18,8 @@ public class Printer {
     }
 
     public void print(int pages, int copies){
-        if (this.paperRemaining >= (pages * copies)){
+        if (this.paperRemaining >= (pages * copies) && this.tonerRemaining >= (pages * copies)){
+            this.tonerRemaining -= (pages * copies);
             this.paperRemaining -= (pages * copies);
         }
     }
